@@ -17,10 +17,8 @@ pipeline {
 				}
 			}
     	}
-   }
-}
 
-/*	stage('Build') { 
+	stage('Build') { 
             steps { 
                withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
                  script{
@@ -33,13 +31,15 @@ pipeline {
 	stage('Push') {
             steps {
                 script{
-                    docker.withRegistry('https://145988340565.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:aws-credentials') {
+                    docker.withRegistry('https://983414393427.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:aws-credentials') {
                     app.push("latest")
                     }
                 }
             }
     	}
-	   
+   }
+}
+/*	   
 	stage('Kubernetes Deployment of ASG Bugg Web Application') {
 	   steps {
 	      withKubeConfig([credentialsId: 'kubelogin']) {
